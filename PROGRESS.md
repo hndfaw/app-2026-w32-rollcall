@@ -14,3 +14,4 @@
 ## Session log
 
 - 2026-08-05: ticket #1 — Scaffold Vite + React + TypeScript project with npm scripts (PR #1)
+- 2026-08-05: ticket #2 — Add Vitest setup, test script, and a smoke test (PR #2)

@@ -11,7 +11,7 @@ UI on top, deploy + done-pass last.
 | # | Ticket | Status | PR | Date |
 |---|--------|--------|----|------|
 | 1 | Scaffold Vite + React + TypeScript project with npm scripts | done | #1 | 2026-08-05 |
-| 2 | Add Vitest setup, test script, and a smoke test | todo | | |
+| 2 | Add Vitest setup, test script, and a smoke test | done | #2 | 2026-08-05 |
 | 3 | Data model: classes, participants, sessions, attendance marks, assessments + validation + tests | todo | | |
 | 4 | localStorage persistence with schema version + migration guard + tests | todo | | |
 | 5 | Analytics engine: attendance rate, absence streak, at-risk list (missed N of last M), class trends + tests | todo | | |
