@@ -1,6 +1,6 @@
 # Progress — Rollcall
 
-**Status:** Todo
+**Status:** In progress
 
 ## MVP roadmap (mirrors SPEC.md)
 
@@ -13,4 +13,4 @@
 
 ## Session log
 
-_(empty — no sessions yet)_
+- 2026-08-05: ticket #1 — Scaffold Vite + React + TypeScript project with npm scripts (PR #1)
