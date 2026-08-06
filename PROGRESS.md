@@ -16,3 +16,4 @@
 - 2026-08-05: ticket #1 — Scaffold Vite + React + TypeScript project with npm scripts (PR #1)
 - 2026-08-05: ticket #2 — Add Vitest setup, test script, and a smoke test (PR #2)
 - 2026-08-06: ticket #3 — Data model: classes, participants, sessions, attendance marks, assessments (PR #3)
+- 2026-08-06: ticket #4 — localStorage persistence with schema version + migration guard (PR #4)
