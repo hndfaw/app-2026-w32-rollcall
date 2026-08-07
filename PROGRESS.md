@@ -17,3 +17,4 @@
 - 2026-08-05: ticket #2 — Add Vitest setup, test script, and a smoke test (PR #2)
 - 2026-08-06: ticket #3 — Data model: classes, participants, sessions, attendance marks, assessments (PR #3)
 - 2026-08-06: ticket #4 — localStorage persistence with schema version + migration guard (PR #4)
+- 2026-08-07: ticket #5 — Analytics engine: attendance rate, absence streak, at-risk list, class trends (PR #5)
