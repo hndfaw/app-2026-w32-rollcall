@@ -18,3 +18,4 @@
 - 2026-08-06: ticket #3 — Data model: classes, participants, sessions, attendance marks, assessments (PR #3)
 - 2026-08-06: ticket #4 — localStorage persistence with schema version + migration guard (PR #4)
 - 2026-08-07: ticket #5 — Analytics engine: attendance rate, absence streak, at-risk list, class trends (PR #5)
+- 2026-08-07: ticket #6 — CSV export: attendance and grades generators (PR #6)
