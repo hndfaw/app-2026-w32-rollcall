@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import ClassSidebar from './ClassSidebar'
 import {
   createClass,
   createParticipant,
@@ -220,23 +221,13 @@ function RosterPage() {
 
   return (
     <div className="roster-page">
-      <aside className="class-list">
-        <h2>Classes</h2>
-        <ul>
-          {activeClasses.map((c) => (
-            <li key={c.id}>
-              <button
-                type="button"
-                className={c.id === selectedClass?.id ? 'class-button selected' : 'class-button'}
-                onClick={() => setSelectedClassId(c.id)}
-              >
-                {c.name}
-              </button>
-            </li>
-          ))}
-        </ul>
+      <ClassSidebar
+        classes={activeClasses}
+        selectedClassId={selectedClass?.id}
+        onSelect={setSelectedClassId}
+      >
         <ClassForm onCreate={handleCreateClass} />
-      </aside>
+      </ClassSidebar>
 
       <section className="roster-main">
         {selectedClass ? (

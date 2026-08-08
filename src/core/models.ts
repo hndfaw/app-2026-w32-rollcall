@@ -181,6 +181,13 @@ export function createAttendanceMark(input: CreateAttendanceMarkInput): Attendan
   }
 }
 
+export function setAttendanceMarkStatus(mark: AttendanceMark, status: AttendanceStatus): AttendanceMark {
+  if (!ATTENDANCE_STATUSES.includes(status)) {
+    throw new Error(`Attendance status must be one of: ${ATTENDANCE_STATUSES.join(', ')}`)
+  }
+  return { ...mark, status }
+}
+
 export interface CreateAssessmentInput {
   classId: string
   name: string

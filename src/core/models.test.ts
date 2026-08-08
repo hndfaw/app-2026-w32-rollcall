@@ -6,6 +6,7 @@ import {
   createParticipant,
   createScore,
   createSession,
+  setAttendanceMarkStatus,
   setParticipantArchived,
   updateParticipant,
 } from './models'
@@ -141,6 +142,26 @@ describe('createAttendanceMark', () => {
     expect(() =>
       createAttendanceMark({ sessionId, participantId: '', status: 'present' }),
     ).toThrow(/reference a participant/)
+  })
+})
+
+describe('setAttendanceMarkStatus', () => {
+  const classId = createClass({ name: 'Class A' }).id
+  const sessionId = createSession({ classId, date: '2026-08-06' }).id
+  const participantId = createParticipant({ classId, name: 'Jane' }).id
+  const mark = createAttendanceMark({ sessionId, participantId, status: 'present' })
+
+  it('returns a new mark with the updated status', () => {
+    const updated = setAttendanceMarkStatus(mark, 'absent')
+    expect(updated.status).toBe('absent')
+    expect(updated.id).toBe(mark.id)
+    expect(mark.status).toBe('present')
+  })
+
+  it('rejects an invalid status', () => {
+    expect(() => setAttendanceMarkStatus(mark, 'maybe' as never)).toThrow(
+      /Attendance status must be one of/,
+    )
   })
 })
 
