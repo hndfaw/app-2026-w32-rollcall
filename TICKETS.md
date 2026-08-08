@@ -16,7 +16,7 @@ UI on top, deploy + done-pass last.
 | 4 | localStorage persistence with schema version + migration guard + tests | done | #4 | 2026-08-06 |
 | 5 | Analytics engine: attendance rate, absence streak, at-risk list (missed N of last M), class trends + tests | done | #5 | 2026-08-07 |
 | 6 | CSV export: attendance and grades generators (pure functions) + tests | done | #6 | 2026-08-07 |
-| 7 | Roster UI: create classes, add/edit/archive participants | todo | | |
+| 7 | Roster UI: create classes, add/edit/archive participants | done | #7 | 2026-08-07 |
 | 8 | Session marking UI: start session, tap present/absent/late/excused, big touch targets | todo | | |
 | 9 | Analytics UI: per-class dashboard — rates, streaks, at-risk list, session trend | todo | | |
 | 10 | Gradebook UI: define assessments, enter scores, per-participant averages | todo | | |

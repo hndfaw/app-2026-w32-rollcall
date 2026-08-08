@@ -4,7 +4,7 @@
 
 ## MVP roadmap (mirrors SPEC.md)
 
-- [ ] Roster & classes (participants, multiple classes)
+- [x] Roster & classes (participants, multiple classes)
 - [ ] Session marking (present/absent/late/excused, touch-friendly)
 - [ ] Attendance analytics (rates, streaks, at-risk list, trends)
 - [ ] Gradebook (assessments, scores, averages)
@@ -19,3 +19,4 @@
 - 2026-08-06: ticket #4 — localStorage persistence with schema version + migration guard (PR #4)
 - 2026-08-07: ticket #5 — Analytics engine: attendance rate, absence streak, at-risk list, class trends (PR #5)
 - 2026-08-07: ticket #6 — CSV export: attendance and grades generators (PR #6)
+- 2026-08-07: ticket #7 — Roster UI: create classes, add/edit/archive participants (PR #7)
