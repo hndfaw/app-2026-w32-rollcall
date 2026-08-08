@@ -6,7 +6,7 @@
 
 - [x] Roster & classes (participants, multiple classes)
 - [x] Session marking (present/absent/late/excused, touch-friendly)
-- [ ] Attendance analytics (rates, streaks, at-risk list, trends)
+- [x] Attendance analytics (rates, streaks, at-risk list, trends)
 - [ ] Gradebook (assessments, scores, averages)
 - [ ] Reports (A4 print-CSS + CSV export)
 - [ ] Offline-first (localStorage, demo class, no accounts/keys)
@@ -21,3 +21,4 @@
 - 2026-08-07: ticket #6 — CSV export: attendance and grades generators (PR #6)
 - 2026-08-07: ticket #7 — Roster UI: create classes, add/edit/archive participants (PR #7)
 - 2026-08-08: ticket #8 — Session marking UI: start session, tap present/absent/late/excused (PR #8)
+- 2026-08-08: ticket #9 — Analytics UI: per-class dashboard — rates, streaks, at-risk list, session trend (PR #9)

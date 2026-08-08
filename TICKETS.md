@@ -18,7 +18,7 @@ UI on top, deploy + done-pass last.
 | 6 | CSV export: attendance and grades generators (pure functions) + tests | done | #6 | 2026-08-07 |
 | 7 | Roster UI: create classes, add/edit/archive participants | done | #7 | 2026-08-07 |
 | 8 | Session marking UI: start session, tap present/absent/late/excused, big touch targets | done | #8 | 2026-08-08 |
-| 9 | Analytics UI: per-class dashboard — rates, streaks, at-risk list, session trend | todo | | |
+| 9 | Analytics UI: per-class dashboard — rates, streaks, at-risk list, session trend | done | #9 | 2026-08-08 |
 | 10 | Gradebook UI: define assessments, enter scores, per-participant averages | todo | | |
 | 11 | Report view: per-class A4 print-CSS report + CSV download buttons | todo | | |
 | 12 | Demo class + empty-state onboarding; polish pass (navigation, responsive, a11y basics) | todo | | |
