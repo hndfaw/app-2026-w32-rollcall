@@ -108,6 +108,31 @@ export function createParticipant(input: CreateParticipantInput): Participant {
   }
 }
 
+export interface UpdateParticipantInput {
+  name?: string
+  participantId?: string
+  notes?: string
+}
+
+export function updateParticipant(
+  participant: Participant,
+  input: UpdateParticipantInput,
+): Participant {
+  return {
+    ...participant,
+    name: input.name !== undefined ? requireNonEmpty(input.name, 'Participant name') : participant.name,
+    participantId:
+      input.participantId !== undefined
+        ? input.participantId.trim() || undefined
+        : participant.participantId,
+    notes: input.notes !== undefined ? input.notes.trim() || undefined : participant.notes,
+  }
+}
+
+export function setParticipantArchived(participant: Participant, archived: boolean): Participant {
+  return { ...participant, archived }
+}
+
 export interface CreateSessionInput {
   classId: string
   date: string

@@ -6,6 +6,8 @@ import {
   createParticipant,
   createScore,
   createSession,
+  setParticipantArchived,
+  updateParticipant,
 } from './models'
 
 describe('createClass', () => {
@@ -54,6 +56,38 @@ describe('createParticipant', () => {
 
   it('rejects an empty name', () => {
     expect(() => createParticipant({ classId, name: '' })).toThrow(/must not be empty/)
+  })
+})
+
+describe('updateParticipant', () => {
+  const classId = createClass({ name: 'Class A' }).id
+
+  it('updates only the given fields', () => {
+    const p = createParticipant({ classId, name: 'Jane Doe', notes: 'left-handed' })
+    const updated = updateParticipant(p, { name: 'Jane Smith' })
+    expect(updated.name).toBe('Jane Smith')
+    expect(updated.notes).toBe('left-handed')
+    expect(updated.id).toBe(p.id)
+  })
+
+  it('trims and clears optional fields', () => {
+    const p = createParticipant({ classId, name: 'Jane Doe', notes: 'left-handed' })
+    const updated = updateParticipant(p, { notes: '   ' })
+    expect(updated.notes).toBeUndefined()
+  })
+
+  it('rejects an empty name', () => {
+    const p = createParticipant({ classId, name: 'Jane Doe' })
+    expect(() => updateParticipant(p, { name: '  ' })).toThrow(/must not be empty/)
+  })
+})
+
+describe('setParticipantArchived', () => {
+  it('toggles the archived flag', () => {
+    const classId = createClass({ name: 'Class A' }).id
+    const p = createParticipant({ classId, name: 'Jane Doe' })
+    expect(setParticipantArchived(p, true).archived).toBe(true)
+    expect(setParticipantArchived(setParticipantArchived(p, true), false).archived).toBe(false)
   })
 })
 
