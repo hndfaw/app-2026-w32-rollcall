@@ -1,4 +1,9 @@
 .app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
   border-bottom: 1px solid var(--border);
   padding: 16px 24px;
   text-align: left;
@@ -7,6 +12,22 @@
 .app-title {
   font-size: 24px;
   margin: 0;
+}
+
+.app-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-button {
+  border-color: transparent;
+  background: transparent;
+}
+
+.nav-button.selected {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  font-weight: 600;
 }
 
 .roster-page {
@@ -193,4 +214,119 @@ button.secondary {
 
 .empty-hint {
   color: var(--text);
+}
+
+.sessions-page {
+  display: flex;
+  flex: 1;
+  text-align: left;
+}
+
+.sessions-main {
+  flex: 1;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.sessions-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.session-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.session-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.session-button {
+  background: transparent;
+  border-color: var(--border);
+}
+
+.session-button.selected {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  font-weight: 600;
+}
+
+.session-summary {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.attendance-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.attendance-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.status-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.status-button {
+  min-height: 44px;
+  min-width: 88px;
+  background: transparent;
+  border-color: var(--border);
+}
+
+.status-button.status-present.selected {
+  background: rgba(26, 127, 55, 0.18);
+  border-color: rgba(26, 127, 55, 0.6);
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.status-button.status-absent.selected {
+  background: rgba(209, 36, 47, 0.18);
+  border-color: rgba(209, 36, 47, 0.6);
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.status-button.status-late.selected {
+  background: rgba(154, 103, 0, 0.18);
+  border-color: rgba(154, 103, 0, 0.6);
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.status-button.status-excused.selected {
+  background: rgba(9, 105, 218, 0.18);
+  border-color: rgba(9, 105, 218, 0.6);
+  color: var(--text-h);
+  font-weight: 600;
 }
