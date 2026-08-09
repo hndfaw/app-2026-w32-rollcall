@@ -8,7 +8,7 @@
 - [x] Session marking (present/absent/late/excused, touch-friendly)
 - [x] Attendance analytics (rates, streaks, at-risk list, trends)
 - [x] Gradebook (assessments, scores, averages)
-- [ ] Reports (A4 print-CSS + CSV export)
+- [x] Reports (A4 print-CSS + CSV export)
 - [ ] Offline-first (localStorage, demo class, no accounts/keys)
 
 ## Session log
@@ -23,3 +23,4 @@
 - 2026-08-08: ticket #8 — Session marking UI: start session, tap present/absent/late/excused (PR #8)
 - 2026-08-08: ticket #9 — Analytics UI: per-class dashboard — rates, streaks, at-risk list, session trend (PR #9)
 - 2026-08-08: ticket #10 — Gradebook UI: define assessments, enter scores, per-participant averages (PR #10)
+- 2026-08-09: ticket #11 — Report view: per-class A4 print-CSS report + CSV download buttons (PR #11)
