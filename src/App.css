@@ -522,3 +522,109 @@ button.secondary {
   font-weight: 600;
   color: var(--text-h);
 }
+
+.report-page {
+  display: flex;
+  flex: 1;
+  text-align: left;
+}
+
+.report-main {
+  flex: 1;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.report-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.report-date {
+  color: var(--text);
+  font-size: 14px;
+  margin: 4px 0 0;
+}
+
+.report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  font: inherit;
+  padding: 8px 14px;
+  border: 1px solid var(--accent-border);
+  border-radius: 6px;
+  background: var(--accent-bg);
+  color: var(--text-h);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-link:hover {
+  border-color: var(--accent);
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.report-table th,
+.report-table td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-table th {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm;
+  }
+
+  .no-print,
+  .app-header {
+    display: none !important;
+  }
+
+  #root {
+    width: auto;
+    min-height: 0;
+    border: none;
+    display: block;
+  }
+
+  .report-page {
+    display: block;
+  }
+
+  .report-main {
+    padding: 0;
+  }
+
+  body,
+  :root {
+    background: #fff;
+    color: #000;
+  }
+
+  .report-table th,
+  .report-table td {
+    border-bottom-color: #000;
+  }
+}
