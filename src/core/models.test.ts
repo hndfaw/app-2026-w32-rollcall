@@ -8,6 +8,7 @@ import {
   createSession,
   setAttendanceMarkStatus,
   setParticipantArchived,
+  setScoreValue,
   updateParticipant,
 } from './models'
 
@@ -223,5 +224,28 @@ describe('createScore', () => {
     expect(() =>
       createScore({ assessmentId: assessment.id, participantId: '', value: 5 }, assessment),
     ).toThrow(/reference a participant/)
+  })
+})
+
+describe('setScoreValue', () => {
+  const classId = createClass({ name: 'Class A' }).id
+  const participantId = createParticipant({ classId, name: 'Jane' }).id
+  const assessment = createAssessment({ classId, name: 'Quiz 1', maxScore: 20 })
+  const score = createScore({ assessmentId: assessment.id, participantId, value: 10 }, assessment)
+
+  it('returns a new score with the updated value', () => {
+    const updated = setScoreValue(score, 15, assessment)
+    expect(updated.value).toBe(15)
+    expect(updated.id).toBe(score.id)
+    expect(score.value).toBe(10)
+  })
+
+  it('rejects a value above maxScore', () => {
+    expect(() => setScoreValue(score, 21, assessment)).toThrow(/between 0 and 20/)
+  })
+
+  it('rejects a mismatched assessment', () => {
+    const other = createAssessment({ classId, name: 'Quiz 2', maxScore: 10 })
+    expect(() => setScoreValue(score, 5, other)).toThrow(/must match the given assessment/)
   })
 })

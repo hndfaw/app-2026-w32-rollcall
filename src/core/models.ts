@@ -233,3 +233,13 @@ export function createScore(input: CreateScoreInput, assessment: Assessment): Sc
     value: input.value,
   }
 }
+
+export function setScoreValue(score: Score, value: number, assessment: Assessment): Score {
+  if (score.assessmentId !== assessment.id) {
+    throw new Error('Score assessmentId must match the given assessment')
+  }
+  if (!Number.isFinite(value) || value < 0 || value > assessment.maxScore) {
+    throw new Error(`Score must be between 0 and ${assessment.maxScore}`)
+  }
+  return { ...score, value }
+}

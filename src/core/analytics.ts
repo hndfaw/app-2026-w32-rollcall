@@ -2,7 +2,7 @@
 // trends. Pure functions over already-filtered (single class) sessions/marks/
 // participants - analytics doesn't know about classes, only the records it's given.
 
-import type { AttendanceMark, Participant, Session } from './models'
+import type { AttendanceMark, Assessment, Participant, Score, Session } from './models'
 
 function sortByDate(sessions: Session[]): Session[] {
   return [...sessions].sort((a, b) => {
@@ -99,6 +99,27 @@ export function atRiskParticipants(
       return { participant, missedCount, consideredSessions: recent.length }
     })
     .filter((entry) => entry.missedCount >= options.missed)
+}
+
+/**
+ * A participant's average score across assessments they have a score for, as a
+ * 0-1 fraction of each assessment's maxScore. Assessments with no score recorded
+ * are excluded. null when the participant has no scores at all.
+ */
+export function participantAverage(
+  assessments: Assessment[],
+  scores: Score[],
+  participantId: string,
+): number | null {
+  const percentages: number[] = []
+  for (const assessment of assessments) {
+    const score = scores.find(
+      (s) => s.assessmentId === assessment.id && s.participantId === participantId,
+    )
+    if (score) percentages.push(score.value / assessment.maxScore)
+  }
+  if (percentages.length === 0) return null
+  return percentages.reduce((sum, p) => sum + p, 0) / percentages.length
 }
 
 export interface SessionAttendancePoint {

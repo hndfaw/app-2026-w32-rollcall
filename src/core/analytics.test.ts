@@ -4,8 +4,16 @@ import {
   atRiskParticipants,
   attendanceRate,
   classSessionTrend,
+  participantAverage,
 } from './analytics'
-import { createAttendanceMark, createClass, createParticipant, createSession } from './models'
+import {
+  createAssessment,
+  createAttendanceMark,
+  createClass,
+  createParticipant,
+  createScore,
+  createSession,
+} from './models'
 
 const classId = createClass({ name: 'Class A' }).id
 const alice = createParticipant({ classId, name: 'Alice' })
@@ -139,5 +147,29 @@ describe('classSessionTrend', () => {
   it('gives a session with no marks a rate of 0', () => {
     const trend = classSessionTrend([s1], [], [alice, bob])
     expect(trend[0].rate).toBe(0)
+  })
+})
+
+describe('participantAverage', () => {
+  const quiz1 = createAssessment({ classId, name: 'Quiz 1', maxScore: 20 })
+  const quiz2 = createAssessment({ classId, name: 'Quiz 2', maxScore: 10 })
+
+  it('averages percentages across assessments with a recorded score', () => {
+    const scores = [
+      createScore({ assessmentId: quiz1.id, participantId: alice.id, value: 10 }, quiz1),
+      createScore({ assessmentId: quiz2.id, participantId: alice.id, value: 10 }, quiz2),
+    ]
+    expect(participantAverage([quiz1, quiz2], scores, alice.id)).toBe(0.75)
+  })
+
+  it('excludes assessments with no score for the participant', () => {
+    const scores = [
+      createScore({ assessmentId: quiz1.id, participantId: alice.id, value: 20 }, quiz1),
+    ]
+    expect(participantAverage([quiz1, quiz2], scores, alice.id)).toBe(1)
+  })
+
+  it('returns null when the participant has no scores', () => {
+    expect(participantAverage([quiz1, quiz2], [], alice.id)).toBeNull()
   })
 })
