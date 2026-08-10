@@ -21,7 +21,7 @@ UI on top, deploy + done-pass last.
 | 9 | Analytics UI: per-class dashboard — rates, streaks, at-risk list, session trend | done | #9 | 2026-08-08 |
 | 10 | Gradebook UI: define assessments, enter scores, per-participant averages | done | #10 | 2026-08-08 |
 | 11 | Report view: per-class A4 print-CSS report + CSV download buttons | done | #11 | 2026-08-09 |
-| 12 | Demo class + empty-state onboarding; polish pass (navigation, responsive, a11y basics) | todo | | |
+| 12 | Demo class + empty-state onboarding; polish pass (navigation, responsive, a11y basics) | done | #12 | 2026-08-10 |
 | 13 | GitHub Pages deploy + CI: vite base path, ci.yml (vitest+build on PR), deploy.yml | todo | | |
 | 14 | Definition-of-done pass: LICENSE, live-URL check, machine cleanup, mark Done | todo | | |
 
