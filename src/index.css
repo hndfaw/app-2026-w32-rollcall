@@ -66,6 +66,30 @@ body {
   margin: 0;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10;
+  padding: 10px 16px;
+  background: var(--bg);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+}
+
 h1,
 h2 {
   font-family: var(--heading);

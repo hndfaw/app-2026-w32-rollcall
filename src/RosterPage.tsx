@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import ClassSidebar from './ClassSidebar'
+import { buildDemoData } from './core/demo'
 import {
   createClass,
   createParticipant,
@@ -183,6 +184,20 @@ function RosterPage() {
     setSelectedClassId(newClass.id)
   }
 
+  function handleLoadDemo() {
+    const demo = buildDemoData()
+    setState((s) => ({
+      ...s,
+      classes: [...s.classes, demo.schoolClass],
+      participants: [...s.participants, ...demo.participants],
+      sessions: [...s.sessions, ...demo.sessions],
+      attendanceMarks: [...s.attendanceMarks, ...demo.attendanceMarks],
+      assessments: [...s.assessments, ...demo.assessments],
+      scores: [...s.scores, ...demo.scores],
+    }))
+    setSelectedClassId(demo.schoolClass.id)
+  }
+
   function handleAddParticipant(values: ParticipantFormValues) {
     if (!selectedClass) return
     const participant = createParticipant({
@@ -270,7 +285,17 @@ function RosterPage() {
             )}
           </>
         ) : (
-          <p className="empty-hint">Create a class to get started.</p>
+          <div className="empty-onboarding">
+            <p className="empty-hint">Create a class to get started.</p>
+            {state.classes.length === 0 && (
+              <>
+                <p className="empty-hint">New here? Explore the app with sample data first.</p>
+                <button type="button" className="secondary" onClick={handleLoadDemo}>
+                  Load demo class
+                </button>
+              </>
+            )}
+          </div>
         )}
       </section>
     </div>

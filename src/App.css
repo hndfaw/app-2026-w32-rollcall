@@ -591,6 +591,46 @@ button.secondary {
   font-size: 14px;
 }
 
+.empty-onboarding {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+@media (max-width: 720px) {
+  .app-header {
+    padding: 12px 16px;
+  }
+
+  .roster-page,
+  .sessions-page,
+  .gradebook-page,
+  .analytics-page,
+  .report-page {
+    flex-direction: column;
+  }
+
+  .class-list {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    box-sizing: border-box;
+  }
+
+  .roster-main,
+  .sessions-main,
+  .gradebook-main,
+  .analytics-main,
+  .report-main {
+    padding: 16px;
+  }
+
+  .session-trend-label {
+    width: 120px;
+  }
+}
+
 @media print {
   @page {
     size: A4;
@@ -598,7 +638,8 @@ button.secondary {
   }
 
   .no-print,
-  .app-header {
+  .app-header,
+  .skip-link {
     display: none !important;
   }
 
@@ -606,6 +647,10 @@ button.secondary {
     width: auto;
     min-height: 0;
     border: none;
+    display: block;
+  }
+
+  main {
     display: block;
   }
 

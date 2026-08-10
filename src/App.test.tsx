@@ -81,4 +81,24 @@ describe('App', () => {
     fireEvent.click(screen.getByText('Unarchive'))
     expect(screen.queryByText('Archived')).not.toBeInTheDocument()
   })
+
+  it('loads a demo class from the empty-state onboarding', () => {
+    render(<App />)
+    fireEvent.click(screen.getByText('Load demo class'))
+
+    expect(screen.getByRole('heading', { name: 'Demo Class' })).toBeInTheDocument()
+    expect(screen.getByText('Aiko Tanaka')).toBeInTheDocument()
+  })
+
+  it('hides the demo class option once a real class exists', () => {
+    render(<App />)
+    expect(screen.getByText('Load demo class')).toBeInTheDocument()
+
+    fireEvent.change(screen.getByLabelText('New class name'), {
+      target: { value: 'Morning Cohort' },
+    })
+    fireEvent.click(screen.getByText('Add class'))
+
+    expect(screen.queryByText('Load demo class')).not.toBeInTheDocument()
+  })
 })
