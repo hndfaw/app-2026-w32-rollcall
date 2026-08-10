@@ -13,7 +13,7 @@ function ClassSidebar({
   children?: ReactNode
 }) {
   return (
-    <aside className="class-list">
+    <aside className="class-list" aria-label="Classes">
       <h2>Classes</h2>
       <ul>
         {classes.map((c) => (
@@ -21,6 +21,7 @@ function ClassSidebar({
             <button
               type="button"
               className={c.id === selectedClassId ? 'class-button selected' : 'class-button'}
+              aria-pressed={c.id === selectedClassId}
               onClick={() => onSelect(c.id)}
             >
               {c.name}

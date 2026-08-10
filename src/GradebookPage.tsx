@@ -224,7 +224,7 @@ function GradebookPage() {
             <p className="empty-hint">Add participants to this class before entering scores.</p>
           )
         ) : (
-          <p className="empty-hint">Create a class in Roster to get started.</p>
+          <p className="empty-hint">Create a class in Roster to get started, or load its demo class to explore first.</p>
         )}
       </section>
     </div>

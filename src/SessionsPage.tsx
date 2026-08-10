@@ -64,12 +64,13 @@ function AttendanceRow({
   return (
     <li className="attendance-row">
       <span className="participant-name">{participant.name}</span>
-      <div className="status-buttons">
+      <div className="status-buttons" role="group" aria-label={`${participant.name} attendance status`}>
         {ATTENDANCE_STATUSES.map((s) => (
           <button
             key={s}
             type="button"
             className={`status-button status-${s}${status === s ? ' selected' : ''}`}
+            aria-pressed={status === s}
             onClick={() => onMark(s)}
           >
             {STATUS_LABELS[s]}
@@ -156,6 +157,7 @@ function SessionsPage() {
                     <button
                       type="button"
                       className={s.id === activeSession?.id ? 'session-button selected' : 'session-button'}
+                      aria-pressed={s.id === activeSession?.id}
                       onClick={() => setActiveSessionId(s.id)}
                     >
                       {s.date}
@@ -191,7 +193,7 @@ function SessionsPage() {
             )}
           </>
         ) : (
-          <p className="empty-hint">Create a class in Roster to get started.</p>
+          <p className="empty-hint">Create a class in Roster to get started, or load its demo class to explore first.</p>
         )}
       </section>
     </div>
