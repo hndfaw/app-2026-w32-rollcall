@@ -1,6 +1,6 @@
 # Progress — Rollcall
 
-**Status:** In progress
+**Status:** Done
 
 ## MVP roadmap (mirrors SPEC.md)
 
@@ -26,3 +26,4 @@
 - 2026-08-09: ticket #11 — Report view: per-class A4 print-CSS report + CSV download buttons (PR #11)
 - 2026-08-10: ticket #12 — Demo class + empty-state onboarding; polish pass (PR #12)
 - 2026-08-10: ticket #13 — GitHub Pages deploy + CI: vite base path, ci.yml, deploy.yml (PR #13)
+- 2026-08-11: ticket #14 — Definition-of-done pass: LICENSE, live URL, usage docs, machine cleanup (PR #14)
