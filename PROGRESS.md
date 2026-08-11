@@ -25,3 +25,4 @@
 - 2026-08-08: ticket #10 — Gradebook UI: define assessments, enter scores, per-participant averages (PR #10)
 - 2026-08-09: ticket #11 — Report view: per-class A4 print-CSS report + CSV download buttons (PR #11)
 - 2026-08-10: ticket #12 — Demo class + empty-state onboarding; polish pass (PR #12)
+- 2026-08-10: ticket #13 — GitHub Pages deploy + CI: vite base path, ci.yml, deploy.yml (PR #13)
